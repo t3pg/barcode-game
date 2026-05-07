@@ -1,0 +1,9 @@
+#field {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#field img{
+    position:absolute;
+
+}
