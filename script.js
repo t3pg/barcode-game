@@ -1,7 +1,8 @@
 const Numbers=[];
 
 window.addEventListener('load',function(){
-     addBarcode();
+    const now = new Date();
+    addBarcode();
 
 
 })
@@ -34,9 +35,9 @@ function deleteBarcode(num){
     const element = document.getElementById(`barcode${num}`);
     if (element) {
         element.remove();
+        Numbers.splice(Numbers.indexOf(num), 1);
+        addBarcode();
     }
-    Numbers.splice(Numbers.indexOf(num), 1);
-    addBarcode();
 }
 
 
