@@ -1,9 +1,27 @@
-#field {
-    display: flex;
-    flex-wrap: wrap;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-#field img{
-    position:absolute;
+body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+    overflow: hidden;
+}
 
+#field {
+    position: relative;
+    overflow: hidden;
+}
+
+#field img {
+    position: absolute;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
 }

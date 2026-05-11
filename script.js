@@ -21,13 +21,17 @@ function makeBarcode(num,id){
 function addBarcode(){
     const num=randomNum(100000000000,999999999999);
     Numbers.push(num);
-    const div = document.getElementById("field");
+    const field = document.getElementById("field");
     const id = `barcode${num}`;
     const img = document.createElement("img");
     img.id = id;
-    img.style.left = `${randomNum(0, window.innerWidth - 200)}px`;
-    img.style.top = `${randomNum(0, window.innerHeight - 100)}px`;
-    div.appendChild(img);
+    img.onload = function() {
+        const maxLeft = field.clientWidth - img.naturalWidth;
+        const maxTop = field.clientHeight - img.naturalHeight;
+        img.style.left = `${randomNum(0, Math.max(0, maxLeft))}px`;
+        img.style.top = `${randomNum(0, Math.max(0, maxTop))}px`;
+    };
+    field.appendChild(img);
     makeBarcode(num,id);
 }
 
